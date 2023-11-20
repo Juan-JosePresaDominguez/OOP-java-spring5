@@ -1,5 +1,6 @@
 package com.banana.services;
 
+import com.banana.config.SpringConfig;
 import com.banana.models.Student;
 import com.banana.persistence.StudentsRepository;
 import com.banana.persistence.StudentsRepositoryInf;
@@ -13,7 +14,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = {StudentsServiceI.class, StudentsRepository.class})
+//@ContextConfiguration(classes = {StudentsServiceI.class, StudentsRepository.class})
+@ContextConfiguration(classes = {SpringConfig.class})
 class StudentsServiceITest {
 
     @Autowired
