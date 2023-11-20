@@ -2,7 +2,6 @@ package com.myshoppingcart.persistence;
 
 import com.myshoppingcart.config.SpringConfig;
 import com.myshoppingcart.model.Producto;
-import com.myshoppingcart.service.ShoppingCart;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,28 +13,21 @@ import java.io.IOException;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.greaterThan;
-import static org.hamcrest.Matchers.is;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @ExtendWith(SpringExtension.class)
-//@ContextConfiguration(classes = {ProductoDBRepository.class, CompraDBRepository.class, ShoppingCart.class})
 @ContextConfiguration(classes = {SpringConfig.class})
 public class ProductosDBRepositoryTest {
 
     @Autowired
     private IProductoRepository repo;
 
-    @BeforeEach
-    void sepUp() throws IOException {
-        repo = new ProductoDBRepository();
-    }
-
     @Test
     void testBeans() {
-        assertNotNull(repo);
+        assertThat(repo, notNullValue());
     }
+
 
     @Test
     public void dadosProductos_cuandogetUserProductsUsuarioEnDB_entoncesProductos() throws Exception {

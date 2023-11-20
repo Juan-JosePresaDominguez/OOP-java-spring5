@@ -14,9 +14,9 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
-//@ContextConfiguration(classes = {StudentsServiceI.class, StudentsRepository.class})
+//@ContextConfiguration(classes = {StudentsService.class, StudentsRepository.class})
 @ContextConfiguration(classes = {SpringConfig.class})
-class StudentsServiceITest {
+class StudentsServiceTest {
 
     @Autowired
     private ApplicationContext context;
