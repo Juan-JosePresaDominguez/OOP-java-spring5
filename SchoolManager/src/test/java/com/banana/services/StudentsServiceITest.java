@@ -1,5 +1,7 @@
 package com.banana.services;
 
+import com.banana.models.Student;
+import com.banana.persistence.StudentsRepository;
 import com.banana.persistence.StudentsRepositoryInf;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -11,7 +13,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = {StudentsServiceI.class})
+@ContextConfiguration(classes = {StudentsServiceI.class, StudentsRepository.class})
 class StudentsServiceITest {
 
     @Autowired
@@ -35,5 +37,8 @@ class StudentsServiceITest {
 
     @Test
     void getStudentById() {
+        Student std = service.getStudentById(1L);
+        System.out.println(std);
+        assertNotNull(std);
     }
 }
