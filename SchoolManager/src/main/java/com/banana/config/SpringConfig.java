@@ -12,7 +12,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @Import({ReposConfig.class, ServicesConfig.class})
 @ComponentScan(basePackages = {"com.banana.persistence", "com.banana.services"})
 //@Import({StudentsRepository.class, StudentsService.class})
-@PropertySource("classpath:application.porperties")
+@PropertySource("classpath:application.properties")
 public class SpringConfig {
 
 //    @Bean

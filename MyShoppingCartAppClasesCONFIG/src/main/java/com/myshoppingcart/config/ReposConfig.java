@@ -12,12 +12,12 @@ import java.io.IOException;
 @Configuration
 public class ReposConfig {
 
-    @Bean
-    public String getUrlConn() throws IOException {
-        PropertyValues props = new PropertyValues();
-        String connUrl = props.getPropValues().getProperty("db_url");
-        return connUrl;
-    }
+//    @Bean
+//    public String getUrlConn() throws IOException {
+//        PropertyValues props = new PropertyValues();
+//        String connUrl = props.getPropValues().getProperty("db_url");
+//        return connUrl;
+//    }
 
     @Autowired
     String connUrl;
@@ -27,12 +27,12 @@ public class ReposConfig {
         return new DBConnector();
     }
 
-    @Bean
-    public ICompraRepository createICompraRepository() {
-         CompraDBRepository repo = new CompraDBRepository();
-         repo.setConnUrl(connUrl);
-         return repo;
-    }
+//    @Bean
+//    public ICompraRepository createICompraRepository() {
+//         CompraDBRepository repo = new CompraDBRepository();
+//         repo.setConnUrl(connUrl);
+//         return repo;
+//    }
 
     @Bean
     public IProductoRepository createIProductoRepository() {
