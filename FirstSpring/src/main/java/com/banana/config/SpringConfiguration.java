@@ -8,8 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@ComponentScan(basePackages = {"com.banana.modelos"})
+//@ComponentScan(basePackages = {"com.banana.modelos"})
 @Import({Message.class, SecretMessage.class, User.class})
 public class SpringConfiguration {
-
 }

@@ -1,5 +1,6 @@
 package com.banana.persistence;
 
+import com.banana.config.SpringConfig;
 import com.banana.models.Student;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,7 +18,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 //@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = StudentsRepository.class)
+//@ContextConfiguration(classes = StudentsRepository.class)
+@ContextConfiguration(classes = SpringConfig.class)
 class StudentsRepositoryTest {
 
     @Autowired
@@ -37,6 +39,7 @@ class StudentsRepositoryTest {
     void testBeans() {
         assertNotNull(context);
         assertNotNull(repoStudents);
+        System.out.println(repoStudents.getUrlConn());
     }
 
     @Test

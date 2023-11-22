@@ -1,16 +1,21 @@
 package com.banana.persistence;
 
 import com.banana.models.Student;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
 
-
-@Component
+//@Component
 //@Named
+@Setter
+@Getter
 public class StudentsRepository implements StudentsRepositoryInf {
+
+    private String urlConn;
     private List<Student> students = new ArrayList<>();
 
     public StudentsRepository() {
