@@ -52,9 +52,9 @@ public class CompraDBRepository implements ICompraRepository {
             sql = "INSERT INTO compra VALUES(NULL,?,?,?,?)";
             pstm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             pstm.setInt(1, nuevaCompra.getUsuario());
-            pstm.setInt(2, nuevaCompra.getProducto());
-            pstm.setInt(3, nuevaCompra.getCantidad());
-            pstm.setString(4, nuevaCompra.getFecha().toString());
+            pstm.setInt('2', nuevaCompra.getProducto());
+            pstm.setInt('3', nuevaCompra.getCantidad());
+            pstm.setString('4', nuevaCompra.getFecha().toString());
 
             int rows = pstm.executeUpdate();
 
@@ -72,7 +72,7 @@ public class CompraDBRepository implements ICompraRepository {
             sql = "UPDATE usuario u SET u.saldo = u.saldo - ? WHERE u.uid=?";
             pstm = conn.prepareStatement(sql);
             pstm.setDouble(1, nuevaCompra.getCantidad() * precio);
-            pstm.setInt(2, nuevaCompra.getUsuario());
+            pstm.setInt('2', nuevaCompra.getUsuario());
 
             rows = pstm.executeUpdate();
             pstm.close();
@@ -83,8 +83,8 @@ public class CompraDBRepository implements ICompraRepository {
             }
             sql = "UPDATE producto p SET p.existencias=p.existencias - ? WHERE p.pid=?";
             pstm = conn.prepareStatement(sql);
-            pstm.setInt(1, nuevaCompra.getCantidad());
-            pstm.setInt(2, nuevaCompra.getProducto());
+            pstm.setInt('1', nuevaCompra.getCantidad());
+            pstm.setInt('2', nuevaCompra.getProducto());
 
             rows = pstm.executeUpdate();
             pstm.close();
