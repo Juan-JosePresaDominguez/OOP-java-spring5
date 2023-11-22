@@ -5,16 +5,20 @@ import com.banana.persistence.StudentsRepositoryInf;
 import com.banana.services.IStudentService;
 import com.banana.services.StudentsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.*;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
-//@ComponentScan(basePackages = {"com.banana.persistence", "com.banana.services"})
-//@Import({StudentsRepository.class, StudentsService.class})
 @Import({ReposConfig.class, ServicesConfig.class})
+@ComponentScan(basePackages = {"com.banana.persistence", "com.banana.services"})
+//@Import({StudentsRepository.class, StudentsService.class})
+@PropertySource("classpath:application.porperties")
 public class SpringConfig {
+
+//    @Bean
+//    public static PropertySourcesPlaceholderConfigurer propertyConfigurer() {
+//        return new PropertySourcesPlaceholderConfigurer();
+//    }
 
 //    @Bean
 //    public StudentsRepositoryInf getStudentsRepository() {

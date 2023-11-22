@@ -4,6 +4,7 @@ import com.banana.models.Student;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.inject.Named;
 import java.util.ArrayList;
@@ -11,11 +12,12 @@ import java.util.List;
 
 //@Component
 //@Named
+//@Repository
 @Setter
 @Getter
 public class StudentsRepository implements StudentsRepositoryInf {
-
     private String urlConn;
+
     private List<Student> students = new ArrayList<>();
 
     public StudentsRepository() {
