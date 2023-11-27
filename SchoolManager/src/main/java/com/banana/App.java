@@ -15,9 +15,9 @@ public class App {
 
         //ApplicationContext context = new ClassPathXmlApplicationContext("file:src/main/resources/beans.xml");
         ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-        context.getEnvironment().setActiveProfiles("dev");
-        context.register(SpringConfig.class);
-        context.refresh();
+//        context.getEnvironment().setActiveProfiles("dev");
+//        context.register(SpringConfig.class);
+//        context.refresh();
 
         IStudentService servicioEstudiantes= context.getBean(IStudentService.class);
 
