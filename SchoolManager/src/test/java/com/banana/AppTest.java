@@ -13,7 +13,9 @@ public class AppTest {
 
     @Test
     public void shouldAnswerWithTrue() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("file:src/main/resources/beans.xml");
+        //Test: debería responder con verdadero
+        //ApplicationContext context = new ClassPathXmlApplicationContext("file:src/main/resources/beans.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         assertNotNull(context);
 
         StudentsRepositoryInf repoStudents = context.getBean(StudentsRepositoryInf.class);
